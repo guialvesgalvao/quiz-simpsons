@@ -1,0 +1,68 @@
+.banner_donut {
+    height: 5vh;
+    background: url(../public/ban_donut.png)  fixed border-box;
+    width: 100%;
+}
+
+.banner_menu {
+width: 100%;
+height: 95vh;
+background: url(../public/banner_menu.png) no-repeat fixed border-box;
+}
+
+.questionButton{
+    width: 100%;
+    margin: 1rem;
+}
+
+.organize-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.putInCenter {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem
+}
+
+.askStyle {
+    font-size: 1.3 rem;
+}
+.widthResult{
+    height: 75vh;
+}
+
+.btns_afterLevel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.result_afterLevel {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.checkAnswerAlign {
+    flex-direction: column;
+}
+
+.secondLevelAnswer {
+display: flex;
+flex-direction: column;
+width: 100%;
+align-items: center;
+
+
+}
+
+@media(max-width: 1080px){
+    .organize-buttons{
+        flex-direction: column;
+    }
+}
