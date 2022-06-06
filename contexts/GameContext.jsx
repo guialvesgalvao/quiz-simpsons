@@ -17,8 +17,10 @@ export function GameProvider({ children }) {
          
       ])
 
+      let [lastLevel,setlastLevel] = useState('');
+
     return (
-        <GameContext.Provider value={{pontos,setpontos,perguntas,answers,setanswers}}>
+        <GameContext.Provider value={{pontos,setpontos,perguntas,answers,setanswers,lastLevel,setlastLevel}}>
             {children}
         </GameContext.Provider> 
     )

@@ -7,7 +7,7 @@ import React,{useContext} from "react";
 import { GameContext } from '../contexts/GameContext';
 
 export default function SecondLevel() {
-  const {perguntas}=useContext(GameContext);
+  const {perguntas,answers,setanswers}=useContext(GameContext);
 
  let [textBox,settextBox] = useState('');
  let [vh, setvh] = useState(6);
@@ -20,6 +20,7 @@ export default function SecondLevel() {
  }
 
  async function checkAnswer () {
+  setanswers([... answers ,textBox]);
    let respostaUser = textBox.toLowerCase();
    let gabarito = perguntas[vh].correctWord.toLowerCase();
 

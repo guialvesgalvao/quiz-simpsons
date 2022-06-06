@@ -33,6 +33,7 @@ export default function FirstLevel() {
   }
   
    async function clickOp1(){
+     setanswers([... answers ,perguntas[vh].op[0]]);
 
     if(perguntas[vh].op[0]==perguntas[vh].correctWord && perguntas[vh].selected==5){
       perguntas[vh].selected=0;
@@ -47,6 +48,8 @@ export default function FirstLevel() {
   }
 
      async function clickOp2(){
+      setanswers([... answers ,perguntas[vh].op[1]]);
+
     if(perguntas[vh].op[1]==perguntas[vh].correctWord && perguntas[vh].selected==5){
       perguntas[vh].selected=1;
       setpontos(pontos=pontos+1)
@@ -60,6 +63,7 @@ export default function FirstLevel() {
   }
 
      async function clickOp3(){
+      setanswers([... answers ,perguntas[vh].op[2]]);
     if(perguntas[vh].op[2]==perguntas[vh].correctWord && perguntas[vh].selected==5){
       perguntas[vh].selected=2;
       setpontos(pontos=pontos+1)
@@ -73,6 +77,7 @@ export default function FirstLevel() {
   }
 
      async function clickOp4(){
+      setanswers([... answers ,perguntas[vh].op[3]]);
     if(perguntas[vh].op[3]==perguntas[vh].correctWord && perguntas[vh].selected==5){
       perguntas[vh].selected=3;
       setpontos(pontos=pontos+1)

@@ -5,7 +5,8 @@ import { GameContext } from '../contexts/GameContext';
 
 export default function AfterLevel() {
 
-  let {pontos}=useContext(GameContext);
+  let {pontos,answers,lastLevel}=useContext(GameContext);
+  console.log(lastLevel + " ==" + answers);
 
   return (
           <div>
