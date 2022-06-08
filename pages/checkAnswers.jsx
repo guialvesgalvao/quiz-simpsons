@@ -2,32 +2,33 @@ import {Container, Button, Row } from 'reactstrap';
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { useRouter } from "next/router";
+import React,{useContext} from "react";
+import { GameContext } from '../contexts/GameContext';
+
 
 export default function CheckAnswers() {
 
-  const perguntas = [
-  {pergunta:"Maggie is Lisa's _____",op:["Sister","Father","Uncle","Mother"],correct: 0,selected: 5,correctWord:"Sister",answer:""},
-  {pergunta:"Bart is Lisa's _____",op:["lalau","Grandfather","Niece","Brother"],correct: 3,selected: 5,correctWord:"Brother",answer:""},  {pergunta:"Homer is Lisa's ____",op:["Mother","Father","Brother","Uncle"],correct: 1,selected: 5,correctWord:"Father",answer:""},
-  {pergunta:"Herb is Lisa's _____",op:["Uncle","Grandmother","Father","Sister"],correct: 0,selected: 5,correctWord:"Uncle",answer:""}]
-  
-   let [vh, setvh] = useState(0); 
-   const [pergunta, setpergunta] = useState(perguntas[vh].pergunta);
+  let [vhr, setvhr] = useState(0); 
+  let [maxN, setmaxN] = useState(0);
+  let {perguntas,lastLevel,answers}=useContext(GameContext);
+  const [pergunta, setpergunta] = useState(perguntas[vhr].pergunta);
+
 
   async function nextQuestion () {
-    if(vh<3){
-      setvh(vh=vh+1);
-      setpergunta(perguntas[vh].pergunta);
+    if(vhr<11){
+      setvhr(vhr=vhr+1);
+      setpergunta(perguntas[vhr].pergunta);
     }
   }
 
   async function previousQuestion () {
-    if(vh>0){
-      setvh(vh=vh-1);
-      setpergunta(perguntas[vh].pergunta);
+    if(vhr>0){
+      setvhr(vhr=vhr-1);
+      setpergunta(perguntas[vhr].pergunta);
     }
   }
-  
+
+ 
   return (
           <div>
              <div className='btns_afterLevel '>
@@ -38,15 +39,17 @@ export default function CheckAnswers() {
              <label>{pergunta}</label>
              <div>
                <span>Você respondeu : </span>
-               <p>{perguntas[vh].answer}</p>
+               <p>oi</p>
              </div>
              <div>
                <span>Resposta correta :</span>
-               <p>{perguntas[vh].correctAnswer}</p>
+               <p>{perguntas[vhr].correctWord}</p>
              </div>
            </div>
            <Button><Link href='/'>Início</Link></Button>
         </div>     
       
   )
+  
+  
 }

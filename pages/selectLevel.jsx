@@ -19,31 +19,25 @@ export default function SelectLevel() {
 
   return (
           <div>
-              <Container>
-            <h2>Quiz Simpsons Family</h2>
-            <br/>
-            <Row>
-            <Button color='success' block onClick={selectOp1}>
-              <Link href="/firstLevel" className='text-decoration-none'>
-                   Level 1
-              </Link>
-              </Button>
-            </Row>
-            <Row>
-            <Button color='primary' onClick={selectOp2}>
-              <Link href="/secondLevel">
-                   Level 2
-              </Link>
-              </Button>
-            </Row>
-            <Row>
-              <Button color='danger'>
-              <Link href=''>
-                   Level 3
-              </Link>
-              </Button>
-            </Row>
-            </Container>
+            <div className='secondLevelAnswer'>
+              <h2>Quiz Simpsons Family</h2>
+              <br/>
+              <button  onClick={selectOp1}>
+                <Link href="/firstLevel" className='text-decoration-none'>
+                     Level 1
+                </Link>
+              </button>
+              <button onClick={selectOp2}>
+                <Link href="/secondLevel">
+                     Level 2
+                </Link>
+                </button>
+                <button>
+                <Link href=''>
+                     Level 3
+                </Link>
+                </button>
+            </div>
         </div>     
       
   )
