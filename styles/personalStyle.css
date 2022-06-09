@@ -54,13 +54,16 @@ background: url(../public/banner_menu.png) no-repeat fixed border-box;
 
 .secondLevelAnswer {
 display: flex;
+height: 95vh;
 flex-direction: column;
 width: 100%;
 align-items: center;
 }
 
 .buttons_selectLevel {
-    width: 100%;
+    width: 22%;
+    margin-bottom: 3%;
+    padding: 1.75rem;
 }
 
 @media(max-width: 1080px){

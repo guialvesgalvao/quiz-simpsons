@@ -1,5 +1,5 @@
 import {Container, Button, Row } from 'reactstrap';
-
+import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import React,{useContext} from "react";
@@ -9,8 +9,14 @@ export default function SelectLevel() {
  const router = useRouter();
  let {setlastLevel}=useContext(GameContext);
 
+ const [btn1,setbtn1] = useState(false);
+ const [btn2,setbtn2] = useState(true);
+
  async function selectOp1 () {
-   setlastLevel('1')
+   setlastLevel('1');
+   setbtn1(true);
+   setbtn2(false);
+
  }
 
  async function selectOp2 () {
@@ -22,21 +28,21 @@ export default function SelectLevel() {
             <div className='secondLevelAnswer'>
               <h2>Quiz Simpsons Family</h2>
               <br/>
-              <button  onClick={selectOp1}>
-                <Link href="/firstLevel" className='text-decoration-none'>
+              <Link href="/firstLevel">
+              <Button color="primary" onClick={selectOp1} className="buttons_selectLevel" disabled={btn1}>
                      Level 1
-                </Link>
-              </button>
-              <button onClick={selectOp2}>
-                <Link href="/secondLevel">
-                     Level 2
-                </Link>
-                </button>
-                <button>
-                <Link href=''>
-                     Level 3
-                </Link>
-                </button>
+              </Button>
+              </Link>
+              <Link href="/secondLevel">
+              <Button color="warning" onClick={selectOp2} className="buttons_selectLevel" disabled={btn2}>
+                     Level 2                
+              </Button>
+              </Link>
+              <Link href='' >
+              <Button color="danger" className="buttons_selectLevel" disabled={true} >  
+                     Level 3                
+              </Button>
+              </Link>
             </div>
         </div>     
       

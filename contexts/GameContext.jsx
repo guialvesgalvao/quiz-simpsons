@@ -17,9 +17,6 @@ export function GameProvider({ children }) {
          
       ]);
 
-      const [answers1,setanswers1] = useState(["Não Respondeu","Não Respondeu","Não Respondeu","Não Respondeu","Não Respondeu","Não Respondeu","Não Respondeu","Não Respondeu","Não Respondeu","Não Respondeu","Não Respondeu"
-    ]);
-
       let [lastLevel,setlastLevel] = useState('');
 
     return (
