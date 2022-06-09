@@ -21,7 +21,7 @@ export default function FirstLevel() {
 
   const router = useRouter();
   if(vh>5){
-    router.push('/afterLevel');
+    router.push('/selectSecondLevel');
   }
 
   async function refreshToNext(){

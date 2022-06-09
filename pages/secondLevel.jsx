@@ -7,14 +7,14 @@ import React,{useContext} from "react";
 import { GameContext } from '../contexts/GameContext';
 
 export default function SecondLevel() {
-  const {perguntas,answers,setanswers}=useContext(GameContext);
+  let {pontos,setpontos,perguntas,answers,setanswers}=useContext(GameContext);
 
  let [textBox,settextBox] = useState('');
  let [vh, setvh] = useState(6);
- let [pontos, setpontos] = useState(0);
  const [pergunta, setpergunta] = useState(perguntas[vh].pergunta);
 
  const router = useRouter();
+
  if(vh>11){
    router.push('/afterLevel');
  }
@@ -23,9 +23,7 @@ export default function SecondLevel() {
   setanswers([... answers ,textBox]);
    let respostaUser = textBox.toLowerCase();
    let gabarito = perguntas[vh].correctWord.toLowerCase();
-
-   perguntas[vh].answer=respostaUser;
-   
+   console.log(respostaUser+" = "+gabarito)
    if(respostaUser==gabarito){
      setpontos(pontos=pontos+1);
      setvh(vh=vh+1);

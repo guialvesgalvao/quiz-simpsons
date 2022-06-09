@@ -39,14 +39,14 @@ export default function CheckAnswers() {
              <label>{pergunta}</label>
              <div>
                <span>Você respondeu : </span>
-               <p>oi</p>
+               <p>{answers[vhr]}</p>
              </div>
              <div>
                <span>Resposta correta :</span>
                <p>{perguntas[vhr].correctWord}</p>
              </div>
            </div>
-           <Button><Link href='/'>Início</Link></Button>
+           <Link href='/'><Button>Início</Button></Link>
         </div>     
       
   )
