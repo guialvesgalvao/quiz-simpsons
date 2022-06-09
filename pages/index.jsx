@@ -1,12 +1,9 @@
 import {Container, Button } from 'reactstrap';
 import Link from 'next/link';
-import { useRouter } from "next/router";
 
 
 export default function Home() {
- const router = useRouter();
 
- //className='banner_menu'
   return (
           <div>
               <Container >

@@ -1,4 +1,4 @@
-import {Container, Button, Row, Col } from 'reactstrap';
+import {Container, Button, Row} from 'reactstrap';
 import family_tree from '../public/family_tree.png';
 import { useState } from 'react';
 import { useRouter } from 'next/router';

@@ -1,13 +1,9 @@
-import {Container, Button, Row } from 'reactstrap';
-import { useState } from 'react';
+import {Button} from 'reactstrap';
 import Link from 'next/link';
-import { useRouter } from "next/router";
-import React,{useContext} from "react";
-import { GameContext } from '../contexts/GameContext';
+
 
 export default function SelectSecondLevel() {
- const router = useRouter();
- let {setlastLevel}=useContext(GameContext);
+
 
  /*<Link href='' >
  <Button color="danger" className="buttons_selectLevel" disabled={true} >  

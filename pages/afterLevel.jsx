@@ -1,19 +1,12 @@
-import {Container, Button,Row } from 'reactstrap';
+import { Button} from 'reactstrap';
 import Link from 'next/link';
 import React,{useContext} from "react";
-import { useState } from 'react';
 import { GameContext } from '../contexts/GameContext';
 
 export default function AfterLevel() {
 
-  let {pontos,answers,lastLevel}=useContext(GameContext);
-  console.log(lastLevel + " ==" + answers);
-  let [btn,setbtn] = useState(true);
+  let {pontos}=useContext(GameContext);
   
-  if(lastLevel==1){
-    btn=true
-  }else{btn=false}
-
   return (
           <div>
             <h2 className='putInCenter'>Quiz Simpsons Family</h2>
@@ -25,7 +18,7 @@ export default function AfterLevel() {
               </Link>
               </Button>
               <Link href="/checkAnswers">
-              <Button color='dark' disabled={btn}>
+              <Button color='dark'>
                      <label>Correção</label>
               </Button>
               </Link>

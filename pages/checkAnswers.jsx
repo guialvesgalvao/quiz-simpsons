@@ -1,5 +1,4 @@
-import {Container, Button, Row } from 'reactstrap';
-
+import {Button} from 'reactstrap';
 import Link from 'next/link';
 import { useState } from 'react';
 import React,{useContext} from "react";
@@ -9,8 +8,7 @@ import { GameContext } from '../contexts/GameContext';
 export default function CheckAnswers() {
 
   let [vhr, setvhr] = useState(0); 
-  let [maxN, setmaxN] = useState(0);
-  let {perguntas,lastLevel,answers}=useContext(GameContext);
+  let {perguntas,answers}=useContext(GameContext);
   const [pergunta, setpergunta] = useState(perguntas[vhr].pergunta);
 
 

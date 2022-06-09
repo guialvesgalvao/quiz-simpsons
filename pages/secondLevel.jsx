@@ -23,7 +23,6 @@ export default function SecondLevel() {
   setanswers([... answers ,textBox]);
    let respostaUser = textBox.toLowerCase();
    let gabarito = perguntas[vh].correctWord.toLowerCase();
-   console.log(respostaUser+" = "+gabarito)
    if(respostaUser==gabarito){
      setpontos(pontos=pontos+1);
      setvh(vh=vh+1);
