@@ -5,9 +5,18 @@ import { useRouter } from 'next/router';
 import React,{useContext} from "react";
 import { GameContext } from '../contexts/GameContext';
 import Image from 'next/image';
+import {Howl, Howler} from 'howler';
 
 
 export default function FirstLevel() {
+
+  var soundWin = new Howl({
+    src: ['/somWin.mp3']
+  });
+
+  var soundLoose = new Howl({
+    src: ['/somLoose.mp3']
+  });
 
   let [vh, setvh] = useState(0);
   let {perguntas,pontos,setpontos,answers,setanswers}=useContext(GameContext);
@@ -37,11 +46,13 @@ export default function FirstLevel() {
 
     if(perguntas[vh].op[0]==perguntas[vh].correctWord && perguntas[vh].selected==5){
       perguntas[vh].selected=0;
+      soundWin.play();
       setpontos(pontos=pontos+1)
       setvh(vh=vh+1);
       refreshToNext();
     }  else{
       perguntas[vh].selected=0;
+      soundLoose.play();
       setvh(vh=vh+1);
       refreshToNext();
     }
@@ -52,11 +63,13 @@ export default function FirstLevel() {
 
     if(perguntas[vh].op[1]==perguntas[vh].correctWord && perguntas[vh].selected==5){
       perguntas[vh].selected=1;
+      soundWin.play();
       setpontos(pontos=pontos+1)
       setvh(vh=vh+1);
       refreshToNext();
     }  else{
       perguntas[vh].selected=1;
+      soundLoose.play();
       setvh(vh=vh+1);
       refreshToNext();
     }
@@ -66,11 +79,13 @@ export default function FirstLevel() {
       setanswers([... answers ,perguntas[vh].op[2]]);
     if(perguntas[vh].op[2]==perguntas[vh].correctWord && perguntas[vh].selected==5){
       perguntas[vh].selected=2;
+      soundWin.play();
       setpontos(pontos=pontos+1)
       setvh(vh=vh+1);
       refreshToNext();
     } else{
       perguntas[vh].selected=2;
+      soundLoose.play();
       setvh(vh=vh+1);
       refreshToNext();
     }
@@ -80,11 +95,13 @@ export default function FirstLevel() {
       setanswers([... answers ,perguntas[vh].op[3]]);
     if(perguntas[vh].op[3]==perguntas[vh].correctWord && perguntas[vh].selected==5){
       perguntas[vh].selected=3;
+      soundWin.play();
       setpontos(pontos=pontos+1)
       setvh(vh=vh+1);
       refreshToNext();
     } else{
       perguntas[vh].selected=3;
+      soundLoose.play();
       setvh(vh=vh+1);
       refreshToNext();
     }

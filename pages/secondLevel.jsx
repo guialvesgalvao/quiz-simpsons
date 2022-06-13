@@ -5,19 +5,28 @@ import { useRouter } from 'next/router';
 import family_tree from '../public/family_tree.png';
 import React,{useContext} from "react";
 import { GameContext } from '../contexts/GameContext';
+import {Howl, Howler} from 'howler';
 
 export default function SecondLevel() {
+  var soundWin = new Howl({
+    src: ['/somWin.mp3']
+  });
+
+  var soundLoose = new Howl({
+    src: ['/somLoose.mp3']
+  });
+
   let {pontos,setpontos,perguntas,answers,setanswers}=useContext(GameContext);
 
- let [textBox,settextBox] = useState('');
- let [vh, setvh] = useState(6);
- const [pergunta, setpergunta] = useState(perguntas[vh].pergunta);
+  let [textBox,settextBox] = useState('');
+  let [vh, setvh] = useState(6);
+  const [pergunta, setpergunta] = useState(perguntas[vh].pergunta);
 
- const router = useRouter();
+  const router = useRouter();
 
- if(vh>11){
+  if(vh>11){
    router.push('/afterLevel');
- }
+  }
 
  async function checkAnswer () {
   setanswers([... answers ,textBox]);
@@ -25,9 +34,11 @@ export default function SecondLevel() {
    let gabarito = perguntas[vh].correctWord.toLowerCase();
    if(respostaUser==gabarito){
      setpontos(pontos=pontos+1);
+     soundWin.play();
      setvh(vh=vh+1);
      setpergunta(perguntas[vh].pergunta);
    }else{
+     soundLoose.play();
      setvh(vh=vh+1);
      setpergunta(perguntas[vh].pergunta);
    }
